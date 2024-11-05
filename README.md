@@ -1,6 +1,8 @@
 # coder2j-pyspark-tutorial
 1. [Intro](#schema1)
 2. [PySpark Install and Setup with JupyterLab](#schema2)
+3. [SparkContext vs SparkSession](#schema3)
+4. [Creating SparkContext in PySpark](#schema4)
 
 [Resources](#schemaref)
 
@@ -56,6 +58,49 @@ Configuración del entorno Spark: findspark facilita la localización de la inst
 jupyter-lab
 ```
 [PySpark-Get-Started](PySapk-Get-Started.ipynb)
+
+<hr>
+<a name='schema3'></a>
+
+## 3. SparkContext vs SparkSession
+
+- **¿Qué es un clúster de Spark?**
+Un clúster de Spark es un conjunto de computadoras conectadas entre sí (también llamados nodos) que colaboran para ejecutar tareas de procesamiento de datos de forma distribuida y en paralelo
+    - Nodo Maestro (Master): Este es el "cerebro" del clúster. El nodo maestro coordina las tareas y asigna los recursos (como la memoria y el poder de procesamiento) entre los nodos trabajadores. Solo hay un nodo maestro en cada clúster.
+    - Nodos Trabajadores (Workers): Son los nodos que realmente ejecutan el procesamiento de datos. Reciben instrucciones del nodo maestro y procesan partes de los datos en paralelo. Cuantos más nodos trabajadores haya, más rápido puede ejecutarse un trabajo, ya que cada nodo maneja una parte de los datos.
+    - Aplicación: En un clúster de Spark, cada programa de Spark que se ejecuta es una aplicación que se despliega en el clúster y usa los recursos distribuidos para completar tareas de procesamiento de datos.
+
+Aplicación de Spark → Crea SparkContext → Se conecta al clúster (Nodos maestro y trabajadores).
+SparkContext coordina la distribución de datos y el procesamiento entre los nodos del clúster, permitiendo el procesamiento paralelo y distribuido.
+
+
+### 1. SparkContext
+- Definición: SparkContext es la entrada principal para la funcionalidad de Spark. Es la primera conexión entre una aplicación de Spark y el clúster de Spark, y representa la conexión a un contexto de Spark.
+- Funciones principales:
+    * Permite la creación de RDDs (Resilient Distributed Datasets), que es el nivel de abstracción más bajo en Spark para trabajar con datos distribuidos.
+    - Controla la configuración y recursos del clúster de Spark, como el uso de nodos y la ejecución de tareas.
+
+### 2. SparkSession
+- Definición: Introducida en Spark 2.0, SparkSession es una capa superior de abstracción que facilita la creación y configuración de una aplicación de Spark, y combina toda la funcionalidad que antes estaba distribuida en SparkContext, SQLContext y HiveContext.
+- Funciones principales:
+    - Simplifica el uso de Spark, ya que es una interfaz unificada que permite interactuar tanto con RDDs como con DataFrames y Datasets (estructuras de datos optimizadas y organizadas).
+    - Facilita el uso de Spark SQL, acceso a bases de datos, consultas SQL, y manejo de datos en formato estructurado.
+    - Permite acceder al SparkContext a través de SparkSession.sparkContext, haciendo que el SparkContext esté siempre disponible cuando hay una sesión.
+
+![Contexto_session](./img/CONTEXT_SESSION.jpg)
+
+
+### **¿Cuál debo usar?**
+- En general, SparkSession es la opción preferida en las versiones modernas de Spark (2.0 en adelante) porque ofrece una interfaz unificada y simplificada. Además, cubre la funcionalidad de SparkContext, por lo que SparkSession se utiliza para la mayoría de las aplicaciones.
+- SparkContext es útil si necesitas trabajar directamente con RDDs sin las capas adicionales de abstracción, aunque normalmente puedes acceder a SparkContext desde SparkSession.
+
+
+<hr>
+<a name='schema4'></a>
+
+## 4. Creating SparkContext in PySpark
+
+
 
 
 <hr>
