@@ -112,9 +112,35 @@ SparkContext coordina la distribución de datos y el procesamiento entre los nod
 
 ## 4. Spark RDD and RDD Operations
 
+Los `RDDs` (Resilient Distributed Datasets) son una de las principales abstracciones de datos en Apache Spark. Representan un conjunto de datos distribuido y tolerante a fallos que se puede procesar de manera paralela. Los RDDs son fundamentales en Spark, ya que permiten trabajar con datos de forma distribuida, escalable y eficiente.
+
 ![RDD](./img/rdd_1.jpg)
 ![RDD](./img/rdd_2.jpg)
 ![RDD](./img/rdd_3.jpg)
+
+
+
+### ¿Qué son los RDDs en PySpark?
+En términos simples, un RDD es una colección de datos que se distribuye a través de varios nodos en un clúster y se puede procesar en paralelo. Cada RDD puede contener datos almacenados en múltiples particiones, las cuales pueden estar distribuidas a lo largo de los diferentes nodos del clúster de Spark.
+
+### Características clave de los RDDs
+- **Inmutabilidad**: Los RDDs son inmutables, lo que significa que una vez que se crean, no pueden ser modificados directamente. Sin embargo, puedes crear nuevos RDDs a partir de transformaciones de otros RDDs (por ejemplo, filtrar, mapear, etc.).
+
+- **Distribución**: Los RDDs están diseñados para trabajar en un entorno distribuido, donde los datos se distribuyen automáticamente entre los nodos del clúster. Spark divide los RDDs en particiones para que cada nodo pueda trabajar de manera independiente y en paralelo.
+
+- **Tolerancia a fallos**: Los RDDs son resilientes a fallos. Si un nodo del clúster falla, Spark puede recuperar los datos de un RDD desde otra parte del clúster utilizando un proceso llamado recuperación de fallos basado en el seguimiento de las transformaciones que se han realizado sobre los RDDs.
+
+### Operaciones en RDDs:
+
+- **Acciones**: Las acciones son operaciones que devuelven un valor o desencadenan el procesamiento de un RDD. Ejemplos: collect(), count(), save().
+- **Transformaciones**: Son operaciones que crean un nuevo RDD a partir de uno existente. Son perezosas, lo que significa que no se ejecutan hasta que se realice una acción sobre el RDD. Ejemplos: map(), filter(), flatMap(), reduceByKey().
+
+
+
+
+
+
+
 
 <hr>
 <a name='schemaref'></a>
