@@ -2,7 +2,7 @@
 1. [Intro](#schema1)
 2. [PySpark Install and Setup with JupyterLab](#schema2)
 3. [SparkContext vs SparkSession](#schema3)
-4. [Creating SparkContext in PySpark](#schema4)
+4. [Spark RDD and RDD Operations](#schema4)
 
 [Resources](#schemaref)
 
@@ -95,13 +95,26 @@ SparkContext coordina la distribución de datos y el procesamiento entre los nod
 - SparkContext es útil si necesitas trabajar directamente con RDDs sin las capas adicionales de abstracción, aunque normalmente puedes acceder a SparkContext desde SparkSession.
 
 
+### Creating SparkContext in PySpark
+[Create-SparkContext](./02-Create-SparkContext.ipynb)
+
+
+### Creating SparkSession in Pyspark
+[Create-SparkSession](03-Create-SparkSession.ipynb)
+
+
+
+
+
+
 <hr>
 <a name='schema4'></a>
 
-## 4. Creating SparkContext in PySpark
+## 4. Spark RDD and RDD Operations
 
-
-
+![RDD](./img/rdd_1.jpg)
+![RDD](./img/rdd_2.jpg)
+![RDD](./img/rdd_3.jpg)
 
 <hr>
 <a name='schemaref'></a>
