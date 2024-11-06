@@ -3,6 +3,7 @@
 2. [PySpark Install and Setup with JupyterLab](#schema2)
 3. [SparkContext vs SparkSession](#schema3)
 4. [Spark RDD and RDD Operations](#schema4)
+5. [Spark DataFrame Intro](#schema5)
 
 [Resources](#schemaref)
 
@@ -103,10 +104,6 @@ SparkContext coordina la distribución de datos y el procesamiento entre los nod
 [Create-SparkSession](03-Create-SparkSession.ipynb)
 
 
-
-
-
-
 <hr>
 <a name='schema4'></a>
 
@@ -137,8 +134,16 @@ En términos simples, un RDD es una colección de datos que se distribuye a trav
 
 
 
+<hr>
+<a name='schema5'></a>
 
+## 5. Spark DataFrame Intro
 
+![DF](./img/df_1.jpg)
+![DF](./img/df_2.jpg)
+![DF](./img/df_3.jpg)
+
+[DataFrame - Intro](./05-DataFrame-Intro.ipynb)
 
 
 
