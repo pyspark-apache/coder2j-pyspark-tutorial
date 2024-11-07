@@ -4,6 +4,7 @@
 3. [SparkContext vs SparkSession](#schema3)
 4. [Spark RDD and RDD Operations](#schema4)
 5. [Spark DataFrame Intro](#schema5)
+6. [Creating DataFrame from Various Data Sources](#schema6)
 
 [Resources](#schemaref)
 
@@ -146,6 +147,57 @@ En términos simples, un RDD es una colección de datos que se distribuye a trav
 [DataFrame - Intro](./05-DataFrame-Intro.ipynb)
 
 
+<hr>
+<a name='schema6'></a>
+
+## 6. Creating DataFrame from Various Data Sources
+```python
+# Read CSV file into DataFrame with header
+csv_file_path = "./data/products.csv"
+df = spark.read.csv(csv_file_path,header=True)
+```
+```python
+# Read CSV file into DataFrame with header
+csv_file_path = "./data/products.csv"
+df = spark.read.csv(csv_file_path,header=True)
+```
+
+
+```python
+# Read CSV file into DataFrame with header
+csv_file_path = "./data/products.csv"
+df = spark.read.csv(csv_file_path,header=True, schema=df_schema)
+```
+
+```python
+# Read CSV file into DataFrame with header
+csv_file_path = "./data/products.csv"
+df = spark.read.csv(csv_file_path,header=True, inferSchema=True)
+```
+
+```python
+# Read single line JSON
+# Each row is a JSON record, records aare separated by new line
+
+json_file_path = "./data/products_singleline.json"
+df=spark.read.json(json_file_path)
+```
+
+
+```python
+# Read multi-line JSON
+# Each row is a JSON record, records aare separated by new line
+
+json_file_path = "./data/products_multiline.json"
+df=spark.read.json(json_file_path, multiLine=True)
+```
+```python
+# Read dataframe into parquet file
+parquet_path = "./data/products.parquet"
+df = spark.read.parquet(parquet_path)
+```
+
+[Creating DataFrame](./06-DataFrame-from-various-data-source.ipynb)
 
 <hr>
 <a name='schemaref'></a>
