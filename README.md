@@ -5,6 +5,8 @@
 4. [Spark RDD and RDD Operations](#schema4)
 5. [Spark DataFrame Intro](#schema5)
 6. [Creating DataFrame from Various Data Sources](#schema6)
+7. [Spark DataFrame Operations](#schema7)
+8. [Spark-SQL](#schema8)
 
 [Resources](#schemaref)
 
@@ -59,7 +61,8 @@ Configuración del entorno Spark: findspark facilita la localización de la inst
 ```
 jupyter-lab
 ```
-[PySpark-Get-Started](PySapk-Get-Started.ipynb)
+### **Code**
+[PySpark-Get-Started](01-PySapk-Get-Started.ipynb)
 
 <hr>
 <a name='schema3'></a>
@@ -98,10 +101,13 @@ SparkContext coordina la distribución de datos y el procesamiento entre los nod
 
 
 ### Creating SparkContext in PySpark
+### **Code**
 [Create-SparkContext](./02-Create-SparkContext.ipynb)
 
 
 ### Creating SparkSession in Pyspark
+
+### **Code**
 [Create-SparkSession](03-Create-SparkSession.ipynb)
 
 
@@ -133,7 +139,8 @@ En términos simples, un RDD es una colección de datos que se distribuye a trav
 - **Acciones**: Las acciones son operaciones que devuelven un valor o desencadenan el procesamiento de un RDD. Ejemplos: collect(), count(), save().
 - **Transformaciones**: Son operaciones que crean un nuevo RDD a partir de uno existente. Son perezosas, lo que significa que no se ejecutan hasta que se realice una acción sobre el RDD. Ejemplos: map(), filter(), flatMap(), reduceByKey().
 
-
+### **Code**
+[RRD](./04-RDD-Operations.ipynb)
 
 <hr>
 <a name='schema5'></a>
@@ -144,6 +151,7 @@ En términos simples, un RDD es una colección de datos que se distribuye a trav
 ![DF](./img/df_2.jpg)
 ![DF](./img/df_3.jpg)
 
+### **Code**
 [DataFrame - Intro](./05-DataFrame-Intro.ipynb)
 
 
@@ -196,8 +204,30 @@ df=spark.read.json(json_file_path, multiLine=True)
 parquet_path = "./data/products.parquet"
 df = spark.read.parquet(parquet_path)
 ```
-
+### **Code**
 [Creating DataFrame](./06-DataFrame-from-various-data-source.ipynb)
+
+<hr>
+<a name='schema7'></a>
+
+## 7. Spark DataFrame Operations
+### **Code**
+[Spark DataFrame Operations](./07-DataFrame-Operations.ipynb)
+
+<hr>
+<a name='schema8'></a>
+
+## 8. Spark-SQL
+
+[Spark SQL](./img/sql.jpg)
+
+[Spark SQL](./img/sql_2.jpg)
+
+
+### **Code**
+[Spark SQL](./08-Spark-SQL.ipynb)
+
+
 
 <hr>
 <a name='schemaref'></a>
